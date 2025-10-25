@@ -18,7 +18,9 @@
       "Bash(pnpm test)",
       "Bash(pnpm build)",
       "Bash(pnpm add class-variance-authority clsx tailwind-merge next-themes lucide-react)",
-      "Bash(pnpm add @radix-ui/react-slot @radix-ui/react-switch)"
+      "Bash(pnpm add @radix-ui/react-slot @radix-ui/react-switch)",
+      "Bash(pnpm update tailwindcss@latest)",
+      "Bash(pnpm add -D @tailwindcss/postcss)"
     ],
     "deny": [],
     "ask": []

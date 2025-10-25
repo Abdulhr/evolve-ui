@@ -25,37 +25,96 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="container flex h-16 items-center justify-between px-6">
-              <div className="flex items-center gap-6">
-                <Link href="/" className="font-bold text-xl">
-                  Evolve-UI
-                </Link>
-                <nav className="hidden md:flex items-center gap-6 text-sm">
-                  <Link
-                    href="/about"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    About
+          <div className="relative min-h-screen flex flex-col">
+            {/* Header */}
+            <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+              <div className="container flex h-16 items-center">
+                <div className="flex flex-1 items-center justify-between">
+                  {/* Logo */}
+                  <Link href="/" className="flex items-center space-x-2">
+                    <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
+                      <span className="text-primary-foreground font-bold text-lg">
+                        E
+                      </span>
+                    </div>
+                    <span className="font-bold text-xl hidden sm:inline-block">
+                      Evolve-UI
+                    </span>
                   </Link>
-                  <Link
-                    href="/blog"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Blog
-                  </Link>
-                  <Link
-                    href="/dashboard"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Dashboard
-                  </Link>
-                </nav>
+
+                  {/* Navigation */}
+                  <nav className="flex items-center gap-6 text-sm font-medium">
+                    <Link
+                      href="/"
+                      className="transition-colors hover:text-primary text-muted-foreground hover:text-foreground"
+                    >
+                      Home
+                    </Link>
+                    <Link
+                      href="/about"
+                      className="transition-colors hover:text-primary text-muted-foreground hover:text-foreground"
+                    >
+                      About
+                    </Link>
+                    <Link
+                      href="/blog"
+                      className="transition-colors hover:text-primary text-muted-foreground hover:text-foreground"
+                    >
+                      Blog
+                    </Link>
+                    <Link
+                      href="/dashboard"
+                      className="transition-colors hover:text-primary text-muted-foreground hover:text-foreground"
+                    >
+                      Dashboard
+                    </Link>
+                    <div className="ml-2">
+                      <ThemeToggle />
+                    </div>
+                  </nav>
+                </div>
               </div>
-              <ThemeToggle />
-            </div>
-          </header>
-          <main className="min-h-[calc(100vh-4rem)]">{children}</main>
+            </header>
+
+            {/* Main Content */}
+            <main className="flex-1">{children}</main>
+
+            {/* Footer */}
+            <footer className="border-t py-6 md:py-0">
+              <div className="container flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row">
+                <p className="text-sm text-muted-foreground text-center md:text-left">
+                  Built with{" "}
+                  <Link
+                    href="https://nextjs.org"
+                    target="_blank"
+                    className="font-medium underline underline-offset-4 hover:text-primary"
+                  >
+                    Next.js
+                  </Link>
+                  ,{" "}
+                  <Link
+                    href="https://ui.shadcn.com"
+                    target="_blank"
+                    className="font-medium underline underline-offset-4 hover:text-primary"
+                  >
+                    shadcn/ui
+                  </Link>
+                  , and{" "}
+                  <Link
+                    href="https://tailwindcss.com"
+                    target="_blank"
+                    className="font-medium underline underline-offset-4 hover:text-primary"
+                  >
+                    Tailwind CSS
+                  </Link>
+                  .
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  © 2024 Evolve-UI. A learning template.
+                </p>
+              </div>
+            </footer>
+          </div>
         </ThemeProvider>
       </body>
     </html>

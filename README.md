@@ -149,6 +149,163 @@ All components use CSS variables defined in `globals.css`. You can customize the
 }
 ```
 
+## Tailwind CSS v4 & Modern Colors
+
+This template uses **Tailwind CSS v4**, which represents a major shift in how Tailwind works.
+
+### What Changed in Tailwind v4?
+
+**Philosophy Shift:**
+- **From "utility-first" to "utility-native"**: Tailwind v4 is now built from the ground up for modern CSS
+- **Faster builds**: New engine built in Rust makes everything much faster
+- **Simpler config**: Less configuration needed, more works out of the box
+- **Native CSS features**: Better use of modern CSS capabilities like CSS variables and `@layer`
+
+**Key Changes:**
+- **Zero-config by default**: Works without `tailwind.config.js` for basic usage
+- **Better performance**: Up to 10x faster builds in some cases
+- **CSS-first approach**: Generates cleaner, more maintainable CSS
+- **Modern color spaces**: Built-in support for OKLCH colors
+
+**What This Means for You:**
+- **Faster development**: Changes show up quicker in your browser
+- **Less setup**: Fewer configuration files to worry about
+- **Better colors**: More vibrant, consistent colors across devices
+- **Future-proof**: Uses the latest CSS standards
+
+### Understanding OKLCH Colors
+
+**What is OKLCH?**
+
+OKLCH is a modern color space that describes colors using three values:
+- **L** (Lightness): How bright the color is (0% = black, 100% = white)
+- **C** (Chroma): How colorful it is (0 = gray, higher = more vibrant)
+- **H** (Hue): The color itself (0-360 degrees around the color wheel)
+
+**Example:**
+```css
+/* OKLCH format */
+--primary: 62.8% 0.214 259.6;
+/*         ^^^^   ^^^^^  ^^^^^
+           L      C      H
+           62.8%  0.214  259.6°  = Beautiful blue */
+```
+
+**Why OKLCH instead of HSL or RGB?**
+
+The older formats (HSL, RGB, Hex) have problems:
+
+1. **HSL Problem**: Colors with the same "lightness" value look different to our eyes
+   ```css
+   /* Both at 50% lightness, but yellow looks much brighter than blue */
+   --yellow-hsl: 60 100% 50%;   /* Looks very bright */
+   --blue-hsl: 240 100% 50%;    /* Looks much darker */
+   ```
+
+2. **OKLCH Solution**: Perceptually uniform - 50% lightness looks the same across all colors
+   ```css
+   /* Both at 62.8% lightness, and they actually look similar brightness */
+   --yellow-oklch: 62.8% 0.214 100;    /* Consistent brightness */
+   --blue-oklch: 62.8% 0.214 259.6;    /* Consistent brightness */
+   ```
+
+**Benefits of OKLCH:**
+
+1. **Perceptually Uniform**: Colors with the same lightness value actually look the same brightness to human eyes
+2. **Wider Color Gamut**: Access to more vibrant colors that HSL/RGB can't represent
+3. **Better Gradients**: Smooth transitions between colors without muddy middle tones
+4. **Accessibility**: Easier to create accessible color contrasts
+5. **Future-Proof**: Modern browsers natively support it
+
+**Real-World Example:**
+
+In this project, our primary blue is defined as:
+```css
+:root {
+  --primary: 62.8% 0.214 259.6;
+  /*         Bright  Vibrant  Blue */
+}
+
+.dark {
+  --primary: 70.9% 0.221 263.4;
+  /*         Lighter  More vibrant  Slightly different blue */
+}
+```
+
+This gives us:
+- **Light mode**: A vibrant blue that's readable
+- **Dark mode**: A slightly brighter, more vibrant blue that stands out against dark backgrounds
+- **Consistent perception**: Both feel equally "bright" in their contexts
+
+### How Themes Work in This Project
+
+**CSS Variables Approach:**
+
+This template uses CSS variables to define all colors in one place ([src/app/globals.css](src/app/globals.css)):
+
+```css
+@layer base {
+  :root {
+    /* Light mode colors */
+    --background: 100% 0 0;          /* Pure white */
+    --foreground: 9.8% 0.038 265.75; /* Almost black */
+    --primary: 62.8% 0.214 259.6;    /* Blue */
+  }
+
+  .dark {
+    /* Dark mode colors */
+    --background: 13.4% 0.034 265.75; /* Very dark blue */
+    --foreground: 98% 0.013 264.5;    /* Almost white */
+    --primary: 70.9% 0.221 263.4;     /* Brighter blue */
+  }
+}
+```
+
+**How It Works:**
+
+1. **Define once**: Set all color values in `globals.css`
+2. **Reference everywhere**: Use these values throughout your app
+   ```typescript
+   <div className="bg-primary text-primary-foreground">
+     This uses the CSS variables automatically
+   </div>
+   ```
+3. **Automatic dark mode**: When `.dark` class is added to `<html>`, all colors switch
+
+**Tailwind Config Connection:**
+
+The [tailwind.config.ts](tailwind.config.ts) tells Tailwind to use these CSS variables:
+
+```typescript
+colors: {
+  primary: {
+    DEFAULT: "oklch(var(--primary))",
+    foreground: "oklch(var(--primary-foreground))",
+  },
+  // ... more colors
+}
+```
+
+**Benefits:**
+
+1. **Single source of truth**: Change colors in one place
+2. **Type-safe**: Tailwind autocomplete works
+3. **Runtime switching**: Can change themes without rebuilding
+4. **Consistent**: Same colors across all components
+
+**Customizing Your Theme:**
+
+To change colors, edit [src/app/globals.css](src/app/globals.css):
+
+```css
+:root {
+  /* Change primary to green */
+  --primary: 65% 0.18 145;  /* L: 65%, C: 0.18, H: 145° (green) */
+}
+```
+
+**Pro Tip**: Use tools like [OKLCH Color Picker](https://oklch.com) to find colors you like, then copy the values directly into your CSS.
+
 ### Dark Mode (`next-themes`)
 
 The template includes dark mode support using `next-themes`:
