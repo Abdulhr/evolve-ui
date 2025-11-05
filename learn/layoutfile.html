@@ -1,170 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Discover Sweden 🇸🇪</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-/* Global Reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #eef3f8;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* Header */
-header {
-  background: linear-gradient(135deg, #1e90ff, #0066cc);
-  color: white;
-  padding: 40px 20px;
-  text-align: center;
-  border-bottom: 4px solid #004080;
-}
-
-header h2 {
-  font-size: 42px;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
-}
-
-header p {
-  font-size: 18px;
-  color: #e6e6e6;
-}
-
-/* Section layout */
-section {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 20px;
-  gap: 20px;
-}
-
-/* Navigation */
-nav {
-  flex: 1;
-  min-width: 200px;
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-nav h3 {
-  color: #004080;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #cce0ff;
-  padding-bottom: 8px;
-}
-
-nav ul {
-  list-style-type: none;
-}
-
-nav li {
-  margin: 12px 0;
-}
-
-nav a {
-  text-decoration: none;
-  color: #004080;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  display: block;
-  padding: 8px 10px;
-  border-radius: 8px;
-}
-
-nav a:hover {
-  background-color: #e0f0ff;
-  color: #ff6600;
-  transform: translateX(5px);
-}
-
-/* Article */
-article {
-  flex: 3;
-  background-color: #ffffff;
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-}
-
-article h1 {
-  color: #004080;
-  font-size: 32px;
-  margin-bottom: 15px;
-}
-
-article p {
-  margin-bottom: 15px;
-  font-size: 17px;
-}
-
-/* Optional Image */
-article img {
-  width: 100%;
-  border-radius: 12px;
-  margin: 20px 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* Footer */
-footer {
-  background: linear-gradient(135deg, #004080, #00264d);
-  color: white;
-  text-align: center;
-  padding: 20px;
-  font-size: 16px;
-  border-top: 4px solid #1e90ff;
-  margin-top: 20px;
-  letter-spacing: 0.5px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  section {
-    flex-direction: column;
-  }
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
 
-<header>
-  <h2>Discover Sweden 🇸🇪</h2>
-  <p>Explore the beauty, culture, and innovation of the land of lakes and Northern Lights 🌌</p>
-</header>
 
-<section>
-  <nav>
-    <h3>Explore Cities</h3>
-    <ul>
-      <li><a href="https://en.wikipedia.org/wiki/Stockholm" target="_blank">Stockholm (Sweden’s Capital)</a></li>
-      <li><a href="https://en.wikipedia.org/wiki/Paris" target="_blank">Paris (France)</a></li>
-      <li><a href="https://en.wikipedia.org/wiki/Tokyo" target="_blank">Tokyo (Japan)</a></li>
-    </ul>
-  </nav>
-  
-  <article>
-    <h1>Sweden – The Land of Serenity 🇸🇪</h1>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Stockholm_skyline_2020.jpg" alt="Stockholm city view">
-    <p>Sweden is a Nordic gem known for its breathtaking natural beauty, peaceful cities, and progressive society. From the snow-covered mountains in the north to the sandy beaches in the south, every corner of Sweden offers something unique.</p>
-    <p>The capital, <strong>Stockholm</strong>, sits gracefully across 14 islands connected by over 50 bridges. It’s a city where history and innovation meet — where medieval architecture stands beside modern design and cutting-edge technology.</p>
-    <p>Sweden’s contributions to the world include iconic brands like <em>Spotify</em>, <em>IKEA</em>, and <em>Volvo</em>. The Swedish way of life emphasizes sustainability, equality, and simplicity — truly embodying the concept of <b>“Lagom”</b> (just the right balance).</p>
-  </article>
-</section>
+<body class="p-10 bg-red-200">
+  <header class="bg-blue-600 text-white text-center text-3xl p-6">Discover Sweden 🇸🇪</header>
 
-<footer>
-  <p>© 2025 Explore Europe | Crafted with 💙 & Flexbox | Stay curious 🌍</p>
-</footer>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+    <div class="bg-white p-4 shadow rounded">
+      <h3 class="font-bold text-blue-800 mb-2">Explore Cities</h3>
+      <ul class="space-y-2">
+        <li><a href="https://en.wikipedia.org/wiki/Stockholm" target="_blank" class="text-blue-600 underline">Stockholm</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Paris" target="_blank" class="text-blue-600 underline">Paris</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Tokyo" target="_blank" class="text-blue-600 underline">Tokyo</a></li>
+      </ul>
+    </div>
 
+    <div class="md:col-span-2 bg-white p-4 shadow rounded">
+      <h1 class="text-2xl font-bold text-blue-800">Sweden – The Land of Serenity 🇸🇪</h1>
+      
+      <p>Sweden is a Nordic gem known for its breathtaking natural beauty, peaceful cities, and progressive society.</p>
+      <p>The capital, Stockholm, sits gracefully across 14 islands connected by over 50 bridges.</p>
+      <p>Sweden is home to brands like Spotify, IKEA, and Volvo.</p>
+    </div>
+  </div>
+
+  <footer class="bg-blue-900 text-white text-center p-4 mt-6">© 2025 Explore Europe</footer>
+
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/jsx">
+    const app = document.getElementById("app");
+    const root = ReactDOM.createRoot(app);
+    root.render(<h1 className="text-3xl font-bold underline">Evolve UI</h1>);
+  </script>
 </body>
 </html>
