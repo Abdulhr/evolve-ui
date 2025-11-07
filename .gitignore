@@ -46,7 +46,7 @@ pnpm-debug.log*
 next-env.d.ts
 
 # IDE
-.vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
