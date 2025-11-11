@@ -78,17 +78,16 @@ export default async function Home() {
               </CardHeader>
             </Card>
 
-            <Card className="border-primary/20">
+            <Card className="border-violet-500/20">
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
-                  <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <div className="h-10 w-10 rounded-lg bg-violet-100 flex items-center justify-center">
                     <span className="text-2xl">🌙</span>
                   </div>
                 </div>
-                <CardTitle>Dark Mode</CardTitle>
-                <CardDescription>
-                  Automatic dark mode support with system detection and manual
-                  toggle
+              <CardTitle className="text-violet-700">Dark Mode</CardTitle>
+                <CardDescription className="text-violet-600">
+                  Automatic dark mode support with system detection and manual toggle
                 </CardDescription>
               </CardHeader>
             </Card>

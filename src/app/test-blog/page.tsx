@@ -60,7 +60,7 @@ export default function BlogPage() {
               <div className="flex items-start justify-between">
                 <div className="space-y-1">
                   <CardTitle>{post.title}</CardTitle>
-                  <CardDescription className="font-bold italic">{post.description}</CardDescription>
+                  <CardDescription>{post.description}</CardDescription>
                 </div>
                 <Badge variant="secondary">{post.category}</Badge>
               </div>

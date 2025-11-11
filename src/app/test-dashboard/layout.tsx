@@ -15,7 +15,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
       <div className="mb-6">
         <h1 className="text-3xl font-bold">Dashboard</h1>
         <p className="text-muted-foreground">
-          Example of a complex nested layout with sidebar navigation working correctly.
+          Example of a complex nested layout with sidebar navigation
         </p>
       </div>
 
@@ -24,19 +24,21 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
         <Card className="md:col-span-1 p-4 h-fit">
           <nav className="space-y-1">
             <Link
-              href="/dashboard"
+              href="/test-dashboard"
               className="block px-3 py-2 rounded-md text-sm hover:bg-accent transition-colors"
             >
               Overview
             </Link>
             <Link
-              href="/dashboard/analytics"
-              className="block px-3 py-2 rounded-md text-sm hover:bg-accent transition-colors"
+              href="/test-dashboard/analytics"
+             className="block px-3 py-2 rounded-md text-sm text-amber-950 font-extrabold hover:bg-accent transition-colors"
+
+
             >
               Analytics
             </Link>
             <Link
-              href="/dashboard/settings"
+              href="/test-dashboard/settings"
               className="block px-3 py-2 rounded-md text-sm hover:bg-accent transition-colors"
             >
               Settings

@@ -22,15 +22,13 @@ export default function AboutPage() {
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
               About Evolve-UI
             </h1>
-            <p className="text-xl text-muted-foreground font-bold">
-              From API to UI — where pixels meet products.
+            <p className="text-xl text-strong-foreground">
+              From API to UI — where pixels meet products EXPONENTIALY
             </p>
-
             <p className="text-muted-foreground font-bold">
-              A comprehensive Next.js learning template built with modern best
+               A comprehensive Next.js learning template built with modern best
               practices for aspiring developers.
             </p>
-
           </div>
         </div>
       </section>
@@ -42,14 +40,14 @@ export default function AboutPage() {
             {/* What is Evolve-UI */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-2xl">What is Evolve-UI?</CardTitle>
+                <CardTitle className="text-2xl text-green-600">What is Evolve-UI?</CardTitle> 
                 <CardDescription>
                   A comprehensive Next.js learning template
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4 text-muted-foreground">
                 <p>
-                  Evolve-UI is a modern Next.js + TypeScript starter template
+                  THIS IS TEST ABOUT PAGE FOR Evolve-UI is a modern Next.js + TypeScript starter template
                   designed specifically for learning web development. It's built
                   with best practices in mind and includes everything you need to
                   start building production-ready applications.
