@@ -38,7 +38,7 @@ export default function RootLayout({
                       </span>
                     </div>
                     <span className="font-bold text-xl hidden sm:inline-block">
-                      Evolve-UI
+                      Evolve-UI Starter
                     </span>
                   </Link>
 

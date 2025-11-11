@@ -13,7 +13,7 @@ const blogPosts: Record<
     category: string;
   }
 > = {
-  "getting-started": {
+  "getting-started123": {
     title: "Getting Started with Evolve-UI",
     date: "2024-01-15",
     category: "Tutorial",

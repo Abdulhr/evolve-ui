@@ -15,7 +15,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
       <div className="mb-6">
         <h1 className="text-3xl font-bold">Dashboard</h1>
         <p className="text-muted-foreground">
-          Example of a complex nested layout with sidebar navigation
+          Example of a complex nested layout with sidebar navigation working correctly.
         </p>
       </div>
 

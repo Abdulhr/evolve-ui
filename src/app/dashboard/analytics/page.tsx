@@ -27,7 +27,10 @@ export default function AnalyticsPage() {
             Notice how the sidebar navigation persists as you navigate between
             dashboard pages. This is the power of nested layouts!
           </p>
-          <Badge>This is a nested route: /dashboard/analytics</Badge>
+          <Badge className="bg-blue-500 hover:bg-green-500">
+            This is a nested route: /dashboard/analytics
+          </Badge>
+
         </CardContent>
       </Card>
 

@@ -18,7 +18,7 @@ export const metadata = {
 
 const blogPosts = [
   {
-    slug: "getting-started",
+    slug: "getting-started123",
     title: "Getting Started with Evolve-UI",
     description:
       "Learn how to set up your development environment and start building with this template.",
@@ -60,7 +60,7 @@ export default function BlogPage() {
               <div className="flex items-start justify-between">
                 <div className="space-y-1">
                   <CardTitle>{post.title}</CardTitle>
-                  <CardDescription>{post.description}</CardDescription>
+                  <CardDescription className="font-bold italic">{post.description}</CardDescription>
                 </div>
                 <Badge variant="secondary">{post.category}</Badge>
               </div>

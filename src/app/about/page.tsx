@@ -22,13 +22,15 @@ export default function AboutPage() {
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
               About Evolve-UI
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-muted-foreground font-bold">
               From API to UI — where pixels meet products.
             </p>
-            <p className="text-muted-foreground">
+
+            <p className="text-muted-foreground font-bold">
               A comprehensive Next.js learning template built with modern best
               practices for aspiring developers.
             </p>
+
           </div>
         </div>
       </section>
